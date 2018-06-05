@@ -1,0 +1,6 @@
+pandas
+networkx
+scipy
+thermo
+fluids
+numpy
