@@ -7,7 +7,7 @@ import pandathermal
 
 setup(
 
-    name='pandangas',
+    name='pandathermal',
 
     version=pandathermal.__version__,
 

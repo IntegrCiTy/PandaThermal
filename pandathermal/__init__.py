@@ -8,3 +8,4 @@
 __version__ = "0.0.1"
 
 from pandathermal.edit import *
+from pandathermal.ndim import *
