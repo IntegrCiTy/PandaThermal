@@ -8,7 +8,6 @@ logging.basicConfig(level=logging.WARNING)
 
 
 class _SupNetwork:
-
     def __init__(self):
         self.srces = pd.DataFrame(columns=["name", "m_dot_m3/s", "p_kW", "t_deg.C"])
         self.sinks = pd.DataFrame(columns=["name", "op_%", "p_kW", "bypass"])

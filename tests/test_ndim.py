@@ -66,9 +66,36 @@ def test_compute_pipes_diameter(fix_create):
     assert pth.compute_pipes_diameter(g, dt=40) == waited
 
 
+def test_compute_pipes_max_m_dot(fix_create):
+    g = fix_create
+    waited = {
+        ("SRCE", "N0"): 0.81,
+        ("N0", "SNK1"): 0.05,
+        ("N0", "N1"): 0.76,
+        ("N1", "SNK2"): 0.1,
+        ("N1", "N2"): 0.67,
+        ("N2", "SNK3"): 0.05,
+        ("N2", "SNK4"): 0.24,
+        ("N2", "SNK5"): 0.05,
+        ("N2", "N3"): 0.33,
+        ("N3", "SNK6"): 0.1,
+        ("N3", "N4"): 0.24,
+        ("N4", "SNK7"): 0.05,
+        ("N4", "N5"): 0.19,
+        ("N5", "SNK8"): 0.14,
+        ("N5", "N6"): 0.05,
+        ("N6", "SNK9"): 0.05,
+    }
+    assert pth.compute_pipes_max_m_dot(g, dt=40) == waited
+
+
 def test_lmtd():
     t_i_src = 80.0
     t_o_src = 50.0
     t_i_snk = 20.0
     t_o_snk = 40.0
     assert round(pth.lmtd(t_i_src, t_o_src, t_i_snk, t_o_snk), 2) == 34.76
+
+
+def test_hex_surf():
+    assert round(pth.hex_surf(20.0, 34.76), 2) == 0.58
