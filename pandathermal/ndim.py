@@ -42,3 +42,7 @@ def compute_pipes_diameter(g, dt, v_max=2.0, f_sim=0.8, cp=4.186):
     node = {src: sum(list(d_att)) for src, d_att in attr.items()}
     pipe = {e: min(node[e[0]], node[e[1]]) for e in g.edges}
     return {k: round(2*np.sqrt(f_sim*p_kw/(np.pi*v_max*cp*dt)), 2) for k, p_kw in pipe.items()}
+
+
+def lmtd(t_i_src, t_o_src, t_i_snk, t_o_snk):
+    return ((t_i_src - t_o_snk) - (t_o_src - t_i_snk))/(np.log(t_i_src - t_o_snk) - np.log(t_o_src - t_i_snk))

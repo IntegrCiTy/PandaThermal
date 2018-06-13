@@ -64,3 +64,11 @@ def test_compute_pipes_diameter(fix_create):
         ("N6", "SNK9"): 0.17,
     }
     assert pth.compute_pipes_diameter(g, dt=40) == waited
+
+
+def test_lmtd():
+    t_i_src = 80.0
+    t_o_src = 50.0
+    t_i_snk = 20.0
+    t_o_snk = 40.0
+    assert round(pth.lmtd(t_i_src, t_o_src, t_i_snk, t_o_snk), 2) == 34.76
