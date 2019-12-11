@@ -1,6 +1,2 @@
-pandas
-networkx
-scipy
-thermo
-fluids
-numpy
+# The next line will install dependencies from "setup.py" and the package itself.
+.
