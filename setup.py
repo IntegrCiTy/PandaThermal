@@ -3,13 +3,9 @@
 
 from setuptools import setup, find_packages
 
-import pandathermal
-
 setup(
 
-    name='pandathermal',
-
-    version=pandathermal.__version__,
+    version="0.0.1"
 
     packages=find_packages(),
 
